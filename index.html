@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/woman-technologist-light-skin-tone_1f469-1f3fb-200d-1f4bb.png">
+    <title>Ning Hsu Portfolio</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- box icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- emialJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('3_0zaan0ZQwfVXOre');
+        })();
+    </script>
+    <script type="text/javascript">
+        
+
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                this.contact_number.value = Math.random() * 100000 | 0;
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        document.getElementById('user-name').value = ''
+                        document.getElementById('user-email').value = ''
+                        document.getElementById('user-text').value = ''
+                        alert('訊息成功送出，收到後會盡快回覆您，謝謝！')
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Ning</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active">首頁</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">關於</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">作品</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">聯絡我</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>            
+            </div>
+        </nav>
+    </header>
+
+    <main class="1-main">
+        <!-- home -->
+        <section class="home bd-grid" id="home">
+            <div class="home__data">
+                <h1 class="home__title">
+                    Hi, <br>I'm <span class="home__title-color">Ning</span><br>
+                    frontend developer
+                </h1>
+                <a href="#contact" class="button">聯絡我</a>
+            </div>
+            <div class="home__social">
+                <!-- <a href="#" class="home__social-icon"><i class='bx bxl-linkedin-square' ></i></a>
+                <a href="#" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                <a href="#" class="home__social-icon"><i class='bx bxl-linkedin-square' ></i></a> -->
+            </div>
+            <div class="home__img">
+                <img src="img/profile-pic.png" alt="">
+            </div>
+
+            
+
+            
+        </section>
+
+        <!-- about -->
+        <section class="about section" id="about">
+            <h2 class="section-title">關於</h2>
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="img/profile-pic.png" alt="">
+                </div>
+
+                <div>
+                    <h2 class="about__subtitle">Ning 許富甯</h2>
+                    <p class="about__text">師大設計系畢業後，踏上瑜珈教學的旅程，先後在台東、台中停留，目前在新竹跟嘉義教課。<br>熱愛學習，持續進修課程、研讀書籍；喜歡跟人互動，和不同領域的人交流，保持開放好奇的心。<br>從2021年中開始，在教課的空檔，自學前端相關技能，過程中有許多嘗試和挫折，但可以發揮設計系的所學，加上完成專案的成就感，讓我下定目標成為前端工程師。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- work -->
+        <section class="work section" id="work">
+            <h2 class="section-title">作品</h2>
+
+            <div class="work__container bd-grid">
+
+                <div class="work__item">
+                    <div class="work__img">
+                        <a target="_blank" href="https://calendar-events-page.netlify.app/">
+                            <img src="img/calendar.png" alt="">
+                        </a>
+                    </div>
+                    <div class="work__content">
+                        <div class="work__title-container">
+                            <h3 class="work__title">即時線上課表</h3>
+                            <div class="work__subtitles">
+                                <span class="work__subtitle">JS</span>
+                                <span class="work__subtitle">HTML</span>
+                                <span class="work__subtitle">CSS</span>
+                            </div>
+                        </div>
+                        <div class="work__text">
+                            <p class="work__description">為自由接課的教練、老師設計，連結Google行事曆，即時更新課表，方便學生查詢和報名。</p>
+                            <ul class="work__ul">
+                                <li>HTML、CSS製作響應式網頁，配合觀看螢幕調整版面配置</li>
+                                <li>連接Google Calendar的API，顯示行事曆上的活動</li>
+                            </ul>
+                            <a target="_blank" href="https://calendar-events-page.netlify.app/" class="button">瀏覽網站</a>
+                        </div>    
+                    </div>
+                </div>
+
+                <div class="work__item">
+                    <div class="work__img">
+                        <a target="_blank" href="https://a-little-muddy.netlify.app/">
+                            <img src="img/muddy.png" alt="">
+                        </a>
+                    </div>
+                    <div class="work__content">
+                        <div class="work__title-container">
+                            <h3 class="work__title">工作室網站</h3>
+                            <div class="work__subtitles">
+                                <span class="work__subtitle">JS</span>
+                                <span class="work__subtitle">HTML</span>
+                                <span class="work__subtitle">CSS</span>
+                            </div>
+                        </div>
+                        <div class="work__text">
+                            <p class="work__description">個人工作室需要有效的客源開發，符合品牌形象的專業網站絕對是吸引客人的關鍵。</p>
+                            <ul class="work__ul">
+                                <li>HTML、CSS製作響應式網頁，打造更好的使用者體驗</li>
+                                <li>JS製作可隱藏的目錄，以及回到頂端的按鍵</li>
+                                <li>連接Google Map的API，置入店家的地圖</li>
+                            </ul>
+                            <a target="_blank" href="https://a-little-muddy.netlify.app/" class="button">瀏覽網站</a>
+                        </div>    
+                    </div>
+                </div>
+
+                <div class="work__item">
+                    <div class="work__img">
+                        <a target="_blank" href="https://quzzical.netlify.app/">
+                            <img src="img/quizzical.png" alt="">
+                        </a>
+                    </div>
+                    <div class="work__content">
+                        <div class="work__title-container">
+                            <h3 class="work__title">Quzzical</h3>
+                            <div class="work__subtitles">
+                                <span class="work__subtitle">React</span>
+                                <span class="work__subtitle">JS</span>
+                                <span class="work__subtitle">HTML</span>
+                                <span class="work__subtitle">CSS</span>
+                            </div>
+                        </div>
+                        <div class="work__text">
+                            <p class="work__description">趣味問答選擇題，測試你的地理知識！</p>
+                            <ul class="work__ul">
+                                <li>用React製作可重複使用的component</li>
+                                <li>以React useState保存玩家的答案</li>
+                                <li>連接Trivia API，提取十個問題顯示在頁面上</li>
+                            </ul>
+                            <a target="_blank" href="https://quzzical.netlify.app/" class="button">瀏覽網站</a>
+                        </div> 
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section class="contact section" id="contact">
+            <h2 class="section-title">聯絡我</h2>
+
+            <div class="contact__container bd-grid">
+                <form action="" class="contact__form" id="contact-form">
+                    <input type="hidden" name="contact_number">
+                    <input type="text" name="user_name" placeholder="姓名" class="contact__input" id="user-name" required>
+                    <input type="mail" name="user_email" placeholder="電子信箱" class="contact__input" id="user-email" required>
+                    <textarea name="message" cols="0" rows="10" class="contact__input" id="user-text" required></textarea>
+
+                    <input type="submit" value="送出" class="contact__button button" id="form-btn">
+                </form>
+            </div>
+        </section>
+
+        <!-- footer -->
+        <footer class="footer">
+            <p class="footer__title">Ning</p>
+
+            <!-- <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook'></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+            </div> -->
+            <p class="footer__copyright">&#169; 2022 all right reserved</p>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+	<script src="index.js"></script>
+  </body>
+</html>
